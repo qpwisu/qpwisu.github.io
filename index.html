@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Final</title>
+    <style>
+        .profile-section { 
+            border-radius: 15px; 
+            background-color: #fff; 
+            display: flex; 
+            max-width: 480px; 
+            width: 100%; 
+            flex-direction: column; 
+            overflow: hidden; 
+            align-items: center; 
+            justify-content: start; 
+            margin: 0 auto; 
+    
+    
+        }
+    .gallery-item {
+        text-align: center;
+        color: #2CD268;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: 'Noto Sans KR', sans-serif; 
+    
+    }
+        .custom-box {
+        height:110px;
+        border-radius: 20px !important;;
+        background-color: rgba(44, 210, 104, 0.1); /* 색상 #2CD268, 투명도 10% */
+    }
+        .gallery-img {
+            width: 73px;
+            height: 73px;
+            object-fit: cover;
+            border-radius: 20%; /* 이미지를 둥글게 */
+        }
+    
+        .top-bar { 
+            background-color: #fff; 
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.12); 
+            display: flex; 
+            width: 100%; 
+            flex-direction: column; 
+            font-family: 'Noto Sans KR', sans-serif; 
+        }
+        
+        .logo { 
+            aspect-ratio: 8.7; 
+            object-fit: contain; 
+            object-position: center; 
+            width: 100%; 
+        }
+        
+        .page-title { 
+            margin: 0;
+            flex: 1; 
+            width: 100%; 
+            font-size: 20px; 
+            color: #000; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            padding: 20px; 
+        }
+        
+        .user-info { 
+            display: flex; 
+            gap: 20px; 
+            justify-content: space-between; 
+            padding: 9px 17px; 
+        }
+        
+        .user-details { 
+            display: flex; 
+            align-items: start; 
+            gap: 13px; 
+            color: #000; 
+        }
+        
+        .user-avatar { 
+            aspect-ratio: 1; 
+            object-fit: contain; 
+            object-position: center; 
+            width: 39px; 
+        }
+        
+        .user-text { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .user-name { 
+            font-size: 14px; 
+            font-weight: 700; 
+            line-height: 1; 
+        }
+        
+        .user-meta { 
+            font-size: 10px; 
+            font-weight: 100; 
+            line-height: 20px; 
+        }
+        
+        .edit-profile-btn { 
+            border-radius: 6px; 
+            background-color: #2cd268; 
+            font-size: 10px; 
+            color: #fff; 
+            border: #000;
+            font-weight: 700; 
+            line-height: 20px; 
+            padding: 1px 6px; 
+        }
+        
+        .favorites-section { 
+            display: flex; 
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.12); 
+            width: 100%; 
+            flex-direction: column; 
+        }
+        
+        .favorites-header { 
+            
+            display: flex; 
+            max-width: 100px;
+            align-items: center;
+            gap: 0px; 
+            padding: 20px;
+            margin-top: 0;
+            color: #000; 
+            font-family: 'Noto Sans KR', sans-serif; 
+        }
+        
+        .favorites-title { 
+            font-size: 16px; 
+            font-weight: 700; 
+            margin : 0;
+            flex-grow: 1; 
+        }
+        
+        .favorites-count { 
+            font-size: 12px; 
+            font-weight: 500; 
+            letter-spacing: -0.12px; 
+            margin: auto 0; 
+        }
+        
+        .favorites-gallery { 
+            display: flex; 
+            width: 100%; 
+            padding-bottom: 10px;
+            justify-content: center;
+            gap: 10px; 
+        }
+        
+        .gallery-nav { 
+            aspect-ratio: 1; 
+            object-fit: contain; 
+            object-position: center; 
+            margin: auto 0; 
+            background-color: #fff;
+            border: #fff;
+        }
+        
+        .gallery-images { 
+            align-self: stretch; 
+            display: flex; 
+            align-items: start; 
+            gap: 5px; 
+        }
+        
+        .gallery-image { 
+            padding-top: 10px;
+            font-size: 10px;
+            aspect-ratio: 0.8; 
+            object-fit: contain; 
+            object-position: center; 
+            width: 88px; 
+            border-radius: 0; 
+        }
+        
+        .reviews-section { 
+            display: flex; 
+            width: 100%; 
+            align-items: center; 
+            gap: 8px; 
+            color: #000; 
+            padding: 20px; 
+            font: 400 12px 'Noto Sans KR', sans-serif; 
+        }
+        
+        .reviews-title { 
+            padding-left: 20px;
+            font-size: 16px; 
+            font-weight: 700; 
+            align-self: stretch; 
+            width: 150px; 
+            margin: auto 0; 
+        }
+        
+        .reviews-count { 
+            font-weight: 500; 
+            letter-spacing: -0.12px; 
+            align-self: stretch; 
+            width: 220px;
+            margin: auto 0; 
+        }
+        
+        .filter-icon { 
+            aspect-ratio: 1.11; 
+            object-fit: contain; 
+            object-position: center; 
+            width: 20px; 
+            align-self: stretch; 
+            margin: auto 0; 
+        }
+        
+        .filter-text { 
+            color: #2cd268; 
+            letter-spacing: -0.12px; 
+            align-self: stretch; 
+            width: 35px; 
+            margin: auto 0; 
+        }
+        
+        .review-list { 
+            display: flex; 
+            margin-top: 0;
+            width: 100%; 
+            flex-direction: column; 
+            align-items: start; 
+        }
+        
+        .review-item { 
+            display: flex; 
+            gap: 9px; 
+            font-family: 'Noto Sans KR', sans-serif; 
+            color: #000; 
+        }
+        
+        .review-image { 
+            aspect-ratio: 1; 
+            object-fit: contain; 
+            object-position: center; 
+            width: 75px; 
+            border-radius: 20px; 
+        }
+        
+        .review-content { 
+            display: flex; 
+            flex-direction: column; 
+            margin: auto 0; 
+        }
+        
+        .review-title { 
+            font-size: 14px; 
+            font-weight: 700; 
+            letter-spacing: -0.14px; 
+        }
+        
+        .review-text { 
+            font-size: 12px; 
+            font-weight: 400; 
+            letter-spacing: -0.12px; 
+            margin-top: 11px; 
+            width: 100%; 
+        }
+        
+        .review-meta { 
+            display: flex; 
+            margin-top: 8px; 
+            width: 151px; 
+            max-width: 100%; 
+            gap: 9px; 
+        }
+        
+        .star-rating { 
+            display: flex; 
+            align-items: center; 
+            gap: 1px; 
+            flex: 1; 
+        }
+        
+        .star-icon { 
+            aspect-ratio: 1; 
+            object-fit: contain; 
+            object-position: center; 
+            width: 14px; 
+            border-radius: 0; 
+        }
+        
+        .review-date { 
+            color: rgba(0, 0, 0, 0.5); 
+            letter-spacing: -0.12px; 
+            font: 400 12px 'Noto Sans KR', sans-serif; 
+        }
+        
+        .review-divider { 
+            align-self: stretch; 
+            margin-top: 13px; 
+            width: 100%; 
+            height: 2px; 
+            border: 1px solid #d9d9d9; 
+        }
+        
+        .load-more-btn { 
+            border-radius: 6px; 
+            background-color: #2cd268; 
+            border: #fff;
+            margin-top: 18px; 
+            color: #fff; 
+            padding: 9px 36px; 
+            font: 700 14px/1 'Noto Sans KR', sans-serif; 
+        }
+        
+    
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+    
+
+</head>
+    
+    <section class="profile-section">
+      <header class="top-bar">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/afbfc97466f177b50271b73062a17c5b3b0d81e35b2dc2d223fabd556d0d950d?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="logo" />
+        <h1 class="page-title">마이페이지</h1>
+        <div class="user-info">
+          <div class="user-details">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/58cf188bfae738816bef30d267da1021ea9b7961ab2816c4c09a14823ec57be5?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="User avatar" class="user-avatar" />
+            <div class="user-text">
+              <span class="user-name">장한영</span>
+              <span class="user-meta">대한민국 · 리뷰수 13</span>
+            </div>
+          </div>
+          <button class="edit-profile-btn">프로필 수정</button>
+        </div>
+      </header>
+      
+      <section class="favorites-section">
+        <div class="favorites-header">
+          <h2 class="favorites-title">즐겨찾기</h2>
+          <span class="favorites-count">10건</span>
+        </div>
+        <div class="favorites-gallery">
+
+          <div class="gallery-images">
+            <button class="gallery-nav" aria-label="Previous image">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/41c954ebf6985dbef99f91474562789890f03938442c5d0d2136087bec8669a4?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" />
+              </button>
+            <div class="gallery-item">
+                <div class="gallery-image custom-box">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Fcd38330b337d4f47a01c8725bcfad290%2Fa9cc4cf9da854db1a4c425e056fd854d" alt="피자" class="gallery-img">
+                    <p>킹스피자</p>
+                
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-image custom-box">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Fcd38330b337d4f47a01c8725bcfad290%2Fb10d9a8512664fad839bb4cd9d5dd785" alt="버거" class="gallery-img">
+                    <p>킹스버거</p>
+                
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-image custom-box">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Fcd38330b337d4f47a01c8725bcfad290%2F4bae9e8555c94af4b58bee350a111c63" alt="샐러드" class="gallery-img">
+                <p>킹스샐러드</p>
+               
+                </div>
+            </div>
+            <button class="gallery-nav" aria-label="Next image">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/485f0342efe8c24efaba1f72c5a9ebaa2ce55e2395334a3f24f2d7969c20b4f6?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" />
+              </button>
+          </div>
+
+        </div>
+      </section>
+      
+      <section class="reviews-section">
+        <h2 class="reviews-title">작성한 리뷰</h2>
+        <span class="reviews-count">13건의 리뷰</span>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/96dfccb90e1c143dc8ada17fcb4f6ac953c9631a8b7e6647c3d64d326ad4ffb8?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="filter-icon" />
+        <span class="filter-text">로컬</span>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/946cca2967102d76832f4ef06843c4c63eaadb78682d7644548c41f44965c024?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="filter-icon" />
+        <span class="filter-text">전체</span>
+      </section>
+      
+      <ul class="review-list">
+        <li class="review-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/54530bb40415f0e3aecbbcf25981ee6a702998bd1aa4a32a456061908e0fcafe?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="킹스버거" class="review-image" />
+          <div class="review-content">
+            <h3 class="review-title">킹스버거</h3>
+            <p class="review-text">햄버거가 너무 맛있어요 다음에 다시 올게요</p>
+          </div>
+        </li>
+        <div class="review-meta">
+          <div class="star-rating" aria-label="5 out of 5 stars">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f2b354db0f3e5995a88197c8835ab21a816584581df479ddbc337b52ed82cb0f?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b6268f6dbf0d10eaf97d6b348dc454517d0686ca7ba02c0af171d427f5001c15?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c276f1e75f783e8ea010263d36711c9972725270f202b6c65da94a5a74f5a62?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6690727df46e6efa5868a2276ed741cad12cbd09b6ba42860f06739ee7fe2ab2?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f7777d1b210e2b4fd3ade57d352e8ac0dad20d0fc7cc39897236f15091a12a18?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+          </div>
+          <time class="review-date">Aug 21, 2024</time>
+        </div>
+        <div class="review-divider"></div>
+        
+        <li class="review-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/04154a225b8203b73a3bad5467ceadadb042eb049e073de56941d2604bd9c7b2?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="킹스샐러드" class="review-image" />
+          <div class="review-content">
+            <h3 class="review-title">킹스샐러드</h3>
+            <p class="review-text">샐러드 맛집. 굳</p>
+          </div>
+        </li>
+        <div class="review-meta">
+          <div class="star-rating" aria-label="5 out of 5 stars">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/58d873be9eb3af3cf2aebe30f00b87fee642034fd3b36cb331bca2109cd5df41?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/de2f735f1942adf308fc63485f48ca06be93e6df47d8a4cb5e2ef6bb22a8b674?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6744dcc621d8f79087b26d1dacde093d5f1457371cc5c821cf7e851c33ec5fa2?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/db87f53af6fc564fa46478a1301377bbcb87f825a89ff6839ef82105dff9f6e1?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e3809815e7320fc75df2858846d7d41245119561ae2b8b3c4040bf2cddbe326?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+          </div>
+          <time class="review-date">Aug 19, 2024</time>
+        </div>
+        <div class="review-divider"></div>
+        
+        <li class="review-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d8ad3619923f975199c08164c950d58692c98d300bfa9c54038afc3db1f0e09?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="킹스피자" class="review-image" />
+          <div class="review-content">
+            <h3 class="review-title">킹스피자</h3>
+            <p class="review-text">피자가 참 맛있어용</p>
+          </div>
+        </li>
+        <div class="review-meta">
+          <div class="star-rating" aria-label="5 out of 5 stars">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3de3ab2d4027273bdd5056c1acef54fda220fdedaf33196a7f8e2714c808dc95?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a63ec7d9a93ed992baf46cf7951d5ab5f097da283fc3e30ddaebf0940a0ab1a4?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/33369cb0c19977b21613f0c9935bdaa9f4d73f9efe61dff69b990c9b2f9266a2?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/86076471252589bee2c766f3e0c9f5d4d8eeb5dc619de4edb066b73160ef846d?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7687ac73f81675db748d5bcbbdd172f978a6d2a4df7c66aa942503188c3589ee?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="star-icon" />
+          </div>
+          <time class="review-date">Aug 15, 2024</time>
+        </div>
+        <div class="review-divider"></div>
+      </ul>
+      
+      <button class="load-more-btn">더보기</button>
+    </section>
