@@ -9,6 +9,9 @@
         body {
             min-width: 365px;
         }
+
+
+
         .profile-section { 
             border-radius: 15px; 
             background-color: #fff; 
@@ -131,10 +134,11 @@
         .favorites-header { 
             
             display: flex; 
-            max-width: 100px;
-            
-            align-items: center;
-            gap: 0px; 
+            max-width: 600px;
+            flex-direction: row;
+            align-items: center; /* 세로 중앙 정렬 */
+            justify-content: flex-start; /* 왼쪽에 몰아넣기 */
+            gap: 10px;
             padding: 20px 20px 10px 20px; 
             margin-top: 0;
             color: #000; 
@@ -145,7 +149,6 @@
             font-size: 16px; 
             font-weight: 700; 
             margin : 0;
-            flex-grow: 1; 
         }
         
         .favorites-count { 
@@ -191,6 +194,8 @@
         
         .reviews-section { 
             display: flex; 
+            justify-content: space-between; /* 왼쪽과 오른쪽으로 배치 */
+
             max-width: 600px;
             width: 100%; 
             align-items: center; 
@@ -198,7 +203,6 @@
 
             box-sizing: border-box;  /* 패딩이 width에 포함되도록 설정 */
 
-            gap: 8px; 
             color: #000; 
             font: 400 12px 'Noto Sans KR', sans-serif; 
         }
@@ -207,17 +211,30 @@
             font-size: 16px; 
             font-weight: 700; 
             align-self: stretch; 
-            width: 150px; 
             margin: auto 0; 
         }
-        
+        .filter-group {
+            display: flex;
+            align-items: center; /* 세로 가운데 정렬 */
+            gap: 10px; /* "로컬"과 "전체" 사이의 간격 조정 */
+        }
+
+        .reviews-title-group {
+            display: flex; 
+            max-width: 600px;
+            flex-direction: row;
+            align-items: center; /* 세로 중앙 정렬 */
+            justify-content: flex-start; /* 왼쪽에 몰아넣기 */
+            gap: 10px;
+        }
+
         .reviews-count { 
             font-weight: 500; 
             letter-spacing: -0.12px; 
             align-self: stretch; 
-            width: 220px;
             margin: auto 0; 
         }
+        
         
         .filter-icon { 
             aspect-ratio: 1.11; 
@@ -405,14 +422,19 @@
       </section>
       
       <section class="reviews-section">
-        <h2 class="reviews-title">작성한 리뷰</h2>
-        <span class="reviews-count">13건의 리뷰</span>
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/96dfccb90e1c143dc8ada17fcb4f6ac953c9631a8b7e6647c3d64d326ad4ffb8?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="filter-icon" />
-        <span class="filter-text">로컬</span>
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/946cca2967102d76832f4ef06843c4c63eaadb78682d7644548c41f44965c024?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="filter-icon" />
-        <span class="filter-text">전체</span>
-      </section>
-      
+        <div class="reviews-title-group">
+            <h2 class="reviews-title">작성한 리뷰</h2>
+            <span class="reviews-count">13건의 리뷰</span>
+        </div>
+    
+        <div class="filter-group">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/96dfccb90e1c143dc8ada17fcb4f6ac953c9631a8b7e6647c3d64d326ad4ffb8?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="filter-icon" />
+            <span class="filter-text">로컬</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/946cca2967102d76832f4ef06843c4c63eaadb78682d7644548c41f44965c024?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="" class="filter-icon" />
+            <span class="filter-text">전체</span>
+        </div>
+    </section>
+    
       <ul class="review-list">
         <li class="review-item">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/54530bb40415f0e3aecbbcf25981ee6a702998bd1aa4a32a456061908e0fcafe?placeholderIfAbsent=true&apiKey=cd38330b337d4f47a01c8725bcfad290" alt="킹스버거" class="review-image" />
